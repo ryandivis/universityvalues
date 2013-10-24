@@ -1,0 +1,84 @@
+#body-background, #main-wrapper, #Underwear, .printHeader, .closeIt {
+
+    display: none;
+
+}
+
+div,table,td,tr,span
+{
+background-color:#FFF !important;
+}
+
+.printContent {
+width:auto;
+background-color:#FFF;
+border:none;
+
+}
+
+.uvBrand, .theCoupon
+
+{
+background-color:#FFF;
+border:dashed;
+
+width:auto;
+
+}
+
+.theCoup0n
+
+{
+
+height:100%;
+
+}
+
+#print-panel {
+
+height:'';
+
+display:block;
+
+
+
+padding-left:500px;
+
+
+
+}
+
+.couponImage {
+
+width:700px !important;
+
+height:467px !important;
+
+margin-bottom:20px;
+
+
+
+}
+
+html, body, #print-panel {
+
+    background: none;
+
+    display: block;
+
+    left: 0px;
+
+    margin: 0px;
+
+    padding: 0px;
+
+    position: relative;
+
+    top: 0px;
+
+    text-align:center;
+
+}
+
+
+
