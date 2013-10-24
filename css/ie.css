@@ -1,0 +1,28 @@
+#stayConnected {
+position:relative;
+left:-205px !important;
+top:10px !important;
+}
+#h1StayConnected {
+position:relative;
+left:125px !important;
+top:-30px !important;
+}
+#signupEmail {
+position:relative;
+left:325px !important;
+}
+#invalidEmail {
+
+}
+#goButton {
+
+}
+#gtText {
+position:relative;
+left:225px !important;
+}
+#stayText {
+position:relative;
+left:200px !important;
+}

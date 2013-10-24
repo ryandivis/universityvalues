@@ -1,0 +1,82 @@
+/* CSS Document */
+
+#widgetHolder {
+	
+	position:relative;
+	width:320px;
+	float:left;
+}
+
+#lower-ad-frame {
+	position:relative;
+	margin-top:75px;
+	}
+
+#lower-frame-top {
+	position:relative;
+	clear:left;
+	float:left;
+
+	}
+
+#low-frame-mid-left {
+	position:relative;
+	margin-left:43px;
+	clear:right;
+	float:left;
+	}
+
+#low-frame-mid-right1 {
+		position:relative;
+		float:left;
+		margin-left:21px;
+		
+		}
+		
+#low-frame-mid-right2 {
+		position:relative;
+		float:left;
+		margin-left:1px;
+		}
+		
+
+#low-frame-bot {
+		position:relative;
+		margin-right:15px;
+		clear:left;
+		
+}
+
+#feat-wrapper {
+	position:relative;
+	float:left;
+	
+
+	}
+
+#ad-box1 {
+	position:relative;
+	clear:right;
+	float:left;
+		}
+
+#ad-box2 {
+	position:relative;
+	
+	float:left;
+		}
+
+#ad-box3 {
+	position:relative;
+	
+	float:left;
+		}
+		
+#ad-box4 {
+	position:relative;
+
+	float:left;
+		}		
+
+
+
