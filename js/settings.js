@@ -60,9 +60,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -80,9 +80,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -100,9 +100,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -120,9 +120,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -140,9 +140,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -160,9 +160,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -180,9 +180,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -200,9 +200,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -220,9 +220,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -240,9 +240,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -260,9 +260,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -280,9 +280,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -300,9 +300,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -320,9 +320,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -340,9 +340,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -360,9 +360,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -380,9 +380,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -400,9 +400,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -420,9 +420,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -440,9 +440,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -460,9 +460,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -480,9 +480,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -500,9 +500,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -520,9 +520,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -540,9 +540,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -560,9 +560,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -580,9 +580,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -600,9 +600,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -620,9 +620,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -640,9 +640,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -660,9 +660,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -680,9 +680,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -700,9 +700,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -720,9 +720,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -740,9 +740,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -760,9 +760,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -780,9 +780,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -800,9 +800,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -820,9 +820,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -840,9 +840,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -860,9 +860,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -880,9 +880,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -900,9 +900,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -920,9 +920,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -940,9 +940,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -960,9 +960,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -980,9 +980,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -1000,9 +1000,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -1020,9 +1020,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -1040,9 +1040,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
@@ -1060,9 +1060,9 @@ var
 
 		image: "",
 
-		color_map: "#aba9a0", 
+		color_map: "#8fc741", 
 
-		color_map_over: "#8fc741"
+		color_map_over: "#aba9a0"
 
 	},
 
