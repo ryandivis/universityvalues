@@ -60,9 +60,20 @@ if (!isset($_SESSION['adminuser']))
       .sidebar-nav {
         padding: 9px 0;
       }
-      
       tr.business {
       	cursor: pointer;
+      }
+      #navTabs{
+      	margin-bottom:0px;
+      	padding-bottom:0px;
+      }
+      .tab-pane { 
+      	padding:10px 50px;
+      	border: 1px solid #ddd;
+      	border-top: 0px;
+      }
+      .tab-pane.active{
+      	background:#fff;
       }
 
       @media (max-width: 980px) {
