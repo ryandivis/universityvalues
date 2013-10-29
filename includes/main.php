@@ -4,7 +4,7 @@ ob_start();	// this starts buffering so that output will not get jumbled if the 
 if($_SERVER['HTTP_HOST']=='universityvalues.com' || $_SERVER['HTTP_HOST']=='www.universityvalues.com')
 	$siteurl='https://'.$_SERVER['HTTP_HOST']."/";
 else
-	$siteurl='https://uv.dev';
+	$siteurl='https://'.$_SERVER['HTTP_HOST']."/UniversityValues/old/";
 define("SITEURL",$siteurl);
 define("SITEPATH",$siteurl);
 $adminemail="andrewb@universityvalues.com";
@@ -73,7 +73,8 @@ include_once('mysql.php');
 session_start();
 
 
-function format_phone($phone) {
+	function format_phone($phone) {
+
 	$phone = preg_replace("/[^0-9]/", "", $phone);
 
 	if(strlen($phone) == 7)
@@ -269,4 +270,5 @@ function getTwitterFollowers($screenName = 'codeforest')
   
     return $numberOfFollowers;
 }
+
 ?>

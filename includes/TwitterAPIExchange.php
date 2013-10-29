@@ -8,7 +8,7 @@
  * @category Awesomeness
  * @package  Twitter-API-PHP
  * @author   James Mallison <me@j7mbo.co.uk>
- * @license  MIT License
+ * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link     http://github.com/j7mbo/twitter-api-php
  */
 class TwitterAPIExchange
