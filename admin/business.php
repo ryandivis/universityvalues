@@ -4,6 +4,19 @@ $(function(){
 	  e.preventDefault();
 	  $(this).tab('show');
 	})
+	$('.edit,.formCancel').click(function(evt){
+		evt.preventDefault();
+		var rel = $(this).attr('rel');
+		$(rel).find('.static,.formField').toggle();
+		if($('.edit[rel="'+rel+'"]') == 'Edit')
+		{
+			$('.edit[rel="'+rel+'"]').text("Cancel");
+		}
+		else
+		{
+			$('.edit[rel="'+rel+'"]').text('Edit');
+		}
+	})
 })
 </script>
 <?php
@@ -20,38 +33,54 @@ $(function(){
 	<ul class="nav nav-tabs" id="navTabs">
 	  <li class="active"><a href="#contact">Contact Info</a></li>
 	  <li><a href="#coupons">Coupons</a></li>
+	  <li><a href="#billing">Billing</a></li>
 	</ul>
 	<div class="tab-content">
 		<div class="tab-pane active" id="contact">
-			<h3>Contact Info</h3>
+			<h3>Contact Info <button type="button" class="btn btn-default active edit" rel="#info" >Edit</button></h3>
+			<form id="info" action="">
 			<dl>
 				<dt>Name</dt>
 				<dd>
 					<span class="static"><?php echo $business['name']; ?></span>
-					<input name="name" type="text" />
+					<input class="formField" name="name" type="text" value="<?php echo $business["name"]; ?>" />
 				</dd>
 				<dt>Email</dt>
 				<dd>
 					<span class="static"><?php echo $business['email']?></span>
-					<input type="text" name="email" value="<?php echo $business["email"]; ?>" />
+					<input class="formField" type="text" name="email" value="<?php echo $business["email"]; ?>" />
 				</dd>
 				<dt>Phone</dt>
 				<dd>
 					<span class="static"><?php echo $business['phone']?></span>
-					<input type="text" name="phone" value="<?php echo $business["phone"]; ?>" />
+					<input class="formField" type="text" name="phone" value="<?php echo $business["phone"]; ?>" />
 				</dd>
 				<dt>Address</dt>
 				<dd>
-					<address>
+					<address class="static">
 					<?php echo ucwords($business['address']); ?><br/>
 					<?php echo ucwords($business['addressMore']); ?><br/>
 					<?php echo ucwords($business['city']);?><br/>
 					<?php echo $business['state'].", ".$business['zip'];?>
 					</address>
+					<address class="formField">
+					<input type="text" name="address" value="<?php echo ucwords($business['address']); ?>"/><br/>
+					<input type="text" name="addressMore" value="<?php echo ucwords($business['addressMore']); ?>"/><br/>
+					<input type="text" name="city" value="<?php echo ucwords($business['city']);?>"/><br/>
+					<?php echo state_select('state',$business['state']); ?>, <input type="text" name="zip" value="<?php echo $business['zip'];?>"/>
+					</address>
 				</dd>
 				<dt>Website</dt>
-				<dd><a href="<?php echo $business['website'];?>" target="_blank"><?php echo $business['website'];?></a></dd>
+				<dd>
+					<a class="static" href="<?php echo $business['website'];?>" target="_blank"><?php echo $business['website'];?></a>
+					<input class="formField" type="text" name="phone" value="<?php echo $business["website"]; ?>" />
+				</dd>
 			</dl>
+			<span class="formField">
+				<button type="button" class="btn btn-default active formCancel" rel="#info" >Cancel</button></h3>
+				<button type="button" class="btn btn-primary active formSave" rel="#info" >Save</button></h3>
+			</span>
+			</form>
 		</div>
 		<div class="tab-pane" id="coupons">
 			<h3>Coupons</h3>
@@ -78,6 +107,32 @@ $(function(){
 			</div>
 			
 			<?php endwhile;?>
+		</div>
+		<div class="tab-pane" id="billing">
+			<h3>Billing Information</h3>
+			<?php
+				$res = mysql_query("SELECT * FROM orders WHERE pid = '".$business['pid']."' ORDER BY dateOrdered DESC") or die(mysql_error());
+				$row = mysql_fetch_assoc($res);
+				?>
+				<dl>
+					<dt>Credit Card Info</dt>
+					<dd>
+						<address>
+							<u>Name on Card:</u> <?php echo $row['nameOnCard'] ;?><br />
+							<u>Credit Card:</u> **** **** **** <?php echo $row['lastFour']; ?>
+						</address>
+					</dd>
+					<dt>Billing Address</dt>
+					<dd>
+						<address>
+							<?php echo $row['address']; ?></br>
+							<?php echo $row['addressMore']; ?></br>
+							<?php echo ucwords($row['city']);?><br/>
+							<?php echo $row['state'].", ".$row['zip'];?>
+						</address>
+					</dd>
+				</dl>
+
 		</div>
 	</div>
 	

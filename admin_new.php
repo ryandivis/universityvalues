@@ -36,10 +36,6 @@ if (isset($_POST['userid'], $_POST['password'])) {
 	}
 
 }
-
-if (!isset($_SESSION['adminuser']))
-
-	$action = 'login';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,6 +70,9 @@ if (!isset($_SESSION['adminuser']))
       }
       .tab-pane.active{
       	background:#fff;
+      }
+      input.formField,address.formField,span.formField{
+        display:none;
       }
 
       @media (max-width: 980px) {
