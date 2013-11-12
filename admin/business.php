@@ -94,7 +94,8 @@ $(function(){
 					<a href="admin_new.php?action=coupons&page=edit&cid=<?php echo $coupon['cid'];?>">Edit</a>
 					<img src="<?php echo $coupon['custom_image']; ?>" width="300" />
 				</div>
-				<div class="span6">
+				<form id="coupon_<?php echo $coupon['cid']; ?>" action="">
+				<div class="span6 static">
 					<dl>
 						<dt>Offer</dt>
 						<dd><?php echo $coupon["realOffer"];?></dd>
@@ -104,6 +105,10 @@ $(function(){
 						<dd><?php echo date("m/d/Y",$coupon["endDate"]);?></dd>
 					</dl>
 				</div>
+				<div class="formField">
+
+				</div>
+				</form>
 			</div>
 			
 			<?php endwhile;?>

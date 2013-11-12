@@ -794,7 +794,7 @@ else {
 			echo "<img src='$coupon[custom_image]' width=300/><br/>";
 				?>
 				<input type="file" name="file">
-                                <input type="hidden" name="custom_image" value="<?=$coupon[custom_image]?>">
+                <input type="hidden" name="custom_image" value="<?=$coupon[custom_image]?>">
 				<br/>
 				<br/>
 				select coupon type 

@@ -272,7 +272,7 @@ function getTwitterFollowers($screenName = 'codeforest')
 }
 
 
-function state_select($name,$selected=null)
+function state_select($name,$selected=null,$id=null,$class=null)
 {
 	$states = array(
 		"AL"=>"Alabama",
@@ -328,7 +328,7 @@ function state_select($name,$selected=null)
 		"WY"=>"Wyoming"
 	);
 	$html = "";
-	$html .= "<select name='$name' >";
+	$html .= "<select name='$name' id='$id' class='$class' >";
 	$html .= "<option value=''>Select a State</option>";
 	foreach($states as $key => $value)
 	{
@@ -345,4 +345,69 @@ function state_select($name,$selected=null)
 
 	return $html;
 }
+
+/*
+* Returns all a list of all the businesses in the system.
+* Can return as an array or as html options
+*/
+function getBusinessList($type = "array")
+{
+	$res = mysql_query("SELECT pid,business FROM businesses ORDER BY businesses.pid ASC");
+
+	switch($type)
+	{
+		case 'array':
+			$businesses = array();
+			while($row = mysql_fetch_assoc($res))
+			{
+				$businesses[$row['pid']] = $row['business'];
+			}
+			return $businesses;
+			break;
+		case 'html':
+			$businesses = "";
+			while($row = mysql_fetch_assoc($res))
+			{
+				$businesses = "<option value='". $row['pid'] ."'>". $row['business'] ."</option>";
+			}
+			return $businesses;
+			break;
+	}
+}
+
+/**
+* Functions for generating a json response
+*/
+class JsonResponse{
+
+	var $success = true;
+	var $error = false;
+	var $messages = array();
+
+	function __construct()
+	{
+
+	}
+
+	function addResponse($msg,$error=false)
+	{
+		$this->messages[] = $msg;
+		if($error) $this->error = true;
+		print_r($this->messages);
+	}
+
+	function generateResponse()
+	{
+		$response = array();
+		$response['error'] = $this->error;
+		$response['success'] = !$this->error;
+		$response['message'] = implode("\r\n", $this->messages);
+
+		$response = json_encode($response);
+
+		return $response;
+	}
+
+}
+
 ?>

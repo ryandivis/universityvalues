@@ -71,8 +71,15 @@ if (isset($_POST['userid'], $_POST['password'])) {
       .tab-pane.active{
       	background:#fff;
       }
-      input.formField,address.formField,span.formField{
+      input.formField,address.formField,span.formField,select.formField{
         display:none;
+      }
+      .glyphicon{
+        font-size:24px;
+        display: inline-block;
+      }
+      .glyphicon:empty{
+        width:1em;
       }
 
       @media (max-width: 980px) {
