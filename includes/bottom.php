@@ -265,8 +265,10 @@
  <script language="JavaScript" src="https://secure.comodo.net/trustlogo/javascript/trustlogo.js" type="text/javascript"></script>
 <!--<a href="http://www.instantssl.com" id="comodoTL">SSL</a>-->
 <!--<script type="text/javascript">TrustLogo("https://universityvalues.com/images/comodosecurepadlock.png", "SC", "none");</script>-->
-<img src="https://universityvalues.com/images/comodosecurepadlock.png" />
-<img src="https://universityvalues.com/images/sucuriverifiedbagemedium.png" />
+<img style="float:left;margin-right:20px;" src="https://universityvalues.com/images/comodosecurepadlock.png" />
+<img style="float:left;margin-right:20px;" src="https://universityvalues.com/images/sucuriverifiedbagemedium.png" />
+<a id="bbblink" class="rbvtbus" href="http://www.bbb.org/utah/business-reviews/advertising-mobile/university-values-in-west-jordan-ut-22302904#bbbseal" title="University Values Inc., Advertising  Mobile, West Jordan, UT" style="float:left;display: block;position: relative;overflow: hidden; width: 40px; height: 65px; margin: 0px; padding: 0px;margin-left:10px;"><img style="padding: 0px; border: none;" id="bbblinkimg" src="http://seal-utah.bbb.org/logo/rbvtbus/university-values-22302904.png" width="80" height="65" alt="University Values Inc., Advertising  Mobile, West Jordan, UT" /></a><script type="text/javascript">var bbbprotocol = ( ("https:" == document.location.protocol) ? "https://" : "http://" ); document.write(unescape("%3Cscript src='" + bbbprotocol + 'seal-utah.bbb.org' + unescape('%2Flogo%2Funiversity-values-22302904.js') + "' type='text/javascript'%3E%3C/script%3E"));</script>
+<div style="clear:left;"></div>
 <style type="text/css">
 		.follow-count{
 		background: none repeat scroll 0 0 #FFFFFF!important;
