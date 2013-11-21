@@ -273,7 +273,8 @@ function login_check()
 {
 	if(isset($_SESSION['user_id'],$_SESSION['username'],$_SESSION['login_string']))
 	{
-		$DB = createPDO('local');
+		$env = ($_SERVER["SERVER_NAME"] == 'www.universityvalues.com')? 'live' : 'local';
+		$DB = createPDO($env);
 		$user_id = $_SESSION['user_id'];
 		$username = $_SESSION['username'];
 		$login_string = $_SESSION['login_string'];
