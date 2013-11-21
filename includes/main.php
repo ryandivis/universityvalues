@@ -231,6 +231,75 @@ function formate($n)
         return number_format($n);
 }
 
+function login($user,$pwd,$type='admin')
+{
+	if($type == 'admin')
+	{
+		$uname = md5($user);
+	    $pwd = md5($pwd);
+	    $result = mysql_query("SELECT * FROM admin WHERE admin_name = '$uname'");
+	    $count = mysql_num_rows($result);
+	    if ($count == 1) {
+	    	$user = mysql_fetch_assoc($result);
+	    	//check if the user is locked
+	    	if($user['attempts'] > 4 || $user['locked']) return false;	
+	    	// check to see if the passwords match
+	    	if($user['pwd'] == $pwd)
+	    	{
+	    		$_SESSION['user_id'] = $user['id'];
+		    	$_SESSION['username'] = $user['admin_name'];
+		    	$_SESSION['login_string'] = hash('sha512',$pwd.$_SERVER['HTTP_USER_AGENT']);
+		    	$result = mysql_query("UPDATE admin SET last_login = NOW(), attempts = 0 WHERE admin_name = '$uname'");	
+		    	return true;
+	    	}
+	    	else
+	    	{
+	    		if($user['attempts'] == 4)
+	    		{
+	    			$result = mysql_query("UPDATE admin SET last_attempt = NOW(), attempts = attempts + 1, locked = 1 WHERE admin_name = '$uname'");
+	    		}
+	    		else
+	    		{
+	    			$result = mysql_query("UPDATE admin SET last_attempt = NOW(), attempts = attempts + 1 WHERE admin_name = '$uname'");	
+	    		}
+	    		return false;
+	    	}
+	    }	
+	}
+	
+}
+
+function login_check()
+{
+	if(isset($_SESSION['user_id'],$_SESSION['username'],$_SESSION['login_string']))
+	{
+		$DB = createPDO('local');
+		$user_id = $_SESSION['user_id'];
+		$username = $_SESSION['username'];
+		$login_string = $_SESSION['login_string'];
+		$browser = $_SERVER['HTTP_USER_AGENT'];
+		try{
+			$stmt = $DB->prepare("SELECT * FROM admin WHERE id=:id");
+			$stmt->execute(array(':id' => $user_id));
+
+			$result = $stmt->fetch(PDO::FETCH_ASSOC);
+			if(hash('sha512',$result['pwd'].$browser) == $login_string)
+			{
+				return true;
+			}
+		}
+		catch(Exception $e)
+		{
+			echo 'Message: ' .$e->getMessage();
+			return false;
+		}
+	}
+	else
+	{
+		return false;
+	}
+}
+
 function getTwitterFollowers($screenName = 'codeforest')
 {
     require_once('cache.php');

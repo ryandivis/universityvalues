@@ -1,23 +1,33 @@
 <?php
+ini_set('display_errors', 'On');
+error_reporting(E_ALL);
+
 if (isset($_GET['action']) && $_GET['action'] == 'logoff') {
     session_start();
     session_destroy();
 }
+
 include_once('includes/main.php');
-if (isset($_POST['userid'], $_POST['password'])) {
-    if(!login($_POST['userid'],$_POST['password'])) $action = 'login';
-    $uname = md5($_POST['userid']);
-    $pwd = md5($_POST['password']);
-    $result = mysql_query("SELECT * FROM admin WHERE admin_name='$uname' and pwd='$pwd'");
-    $count = mysql_num_rows($result);
-    if ($count == 1) {
-        $_SESSION['adminuser'] = $uname;
+
+try{
+    if (isset($_POST['userid'], $_POST['password'])) {
+        if(!login($_POST['userid'],$_POST['password'])) $action = 'login';
+        $uname = md5($_POST['userid']);
+        $pwd = md5($_POST['password']);
+        $result = mysql_query("SELECT * FROM admin WHERE admin_name='$uname' and pwd='$pwd'");
+        $count = mysql_num_rows($result);
+        if ($count == 1) {
+            $_SESSION['adminuser'] = $uname;
+        }
     }
+    else
+    {
+        if (!login_check()) $action = 'login';   
+    }
+}catch(Exception $e){
+    echo "Error Logging In ::" . $e->getMessage();
 }
-else
-{
-    if (!login_check()) $action = 'login';   
-}
+
 
 $uploadur_coupon = mysql_query("select * from coupons where issendforapprovel=1") or die(mysql_error());
 $uploadur_couponResult = mysql_num_rows($uploadur_coupon);
