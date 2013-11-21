@@ -541,7 +541,7 @@ if (isset($schoolid) && $schoolid > 0) {
 		
 		echo "<tr><td valign=top>
 		<input type=checkbox value=$cid name=delete[]><br/>
-		<a href=\"admin.php?action=coupons&page=edit&cid=$cid\">Edit</a></td>
+		<a href=\"admin_new.php?action=coupons&page=edit&cid=$cid\">Edit</a></td>
 		<td valign=top>$cid</td><td valign=top>$business ($pid)</td>
 		<td valign=top>$realOffer</td><td valign=top>$cat[$category]</td>
 		<td valign=top>$type1[$type]</td><td valign=top>$couponProgramName</td><td valign=top>"
@@ -677,7 +677,7 @@ else {
 			}
 			echo "<tr><td valign=top>
 		<input type=checkbox value=$cid name=delete[]><br/>
-		<a href=\"admin.php?action=coupons&page=edit&cid=$cid\">Edit</a></td>
+		<a href=\"admin_new.php?action=coupons&page=edit&cid=$cid\">Edit</a></td>
 		<td valign=top>$cid</td><td valign=top>$business ($pid)</td>
 		<td valign=top>$consal</td>
 		<td valign=top>$realOffer</td><td valign=top>$cat[$category]</td>
