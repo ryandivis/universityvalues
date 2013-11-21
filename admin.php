@@ -5,6 +5,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'logoff') {
 }
 include_once('includes/main.php');
 if (isset($_POST['userid'], $_POST['password'])) {
+    if(!login($_POST['userid'],$_POST['password'])) $action = 'login';
     $uname = md5($_POST['userid']);
     $pwd = md5($_POST['password']);
     $result = mysql_query("SELECT * FROM admin WHERE admin_name='$uname' and pwd='$pwd'");
@@ -13,8 +14,10 @@ if (isset($_POST['userid'], $_POST['password'])) {
         $_SESSION['adminuser'] = $uname;
     }
 }
-if (!isset($_SESSION['adminuser']))
-    $action = 'login';
+else
+{
+    if (!login_check()) $action = 'login';   
+}
 
 $uploadur_coupon = mysql_query("select * from coupons where issendforapprovel=1") or die(mysql_error());
 $uploadur_couponResult = mysql_num_rows($uploadur_coupon);
