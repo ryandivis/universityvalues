@@ -702,7 +702,7 @@ else {
 	} 
 	else if ($page == 'new' || $page == 'edit') 
 	{
-		include('/templates/coupons_edit.php');
+		require('/templates/coupons_edit.php');
 	} 
 	else if ($page == 'locations') {	// TODO Page = Locations
 // 	error_reporting(E_ALL);
