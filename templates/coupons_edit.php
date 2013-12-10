@@ -129,6 +129,8 @@ if ($page == 'edit')
 		<dd>
 			<em>If there are no locations, the coupon is online only</em><br/>
 			<a class="btn addLocation">Add Location</a>
+			<a class="btn addLocationCSV" onclick="$('#csv').click();">Upload Location CSV</a>
+			<input id="csv" type="file" name="csv" style="visibility:hidden;" />
 			<table id="locations" class="table table-striped table-bordered">
 				<tr>
 					<th style="text-align:center;">#</th>
@@ -210,7 +212,7 @@ if ($page == 'edit')
 		</dd>
 		<dd>
 			<button type="button" class="btn btn-default active formCancel" rel="#info" >Cancel</button>
-			<input type="Submit" class="btn btn-primary active formSave" value="Save" />
+			<input type="Submit" class="btn btn-primary active formSave" value="Save" /><span class="glyphicon glyphicon-refresh"></span>
 		</dd>
 	</dl>
 </form>
@@ -223,21 +225,7 @@ $(function(){
 	})
 	$('.addLocation').click(function(evt){
 		evt.preventDefault();
-		var tr = $('#locations').find('tr.default').clone();
-		tr.addClass('locationRow').removeClass('default');
-		tr.find('.removeLocation').click(function(){
-			tr.remove();
-		})
-		tr.find('input,select').each(function(){
-			$(this).removeAttr('disabled');
-		})
-		var rows = $('#locations').find('tr.locationRow').length;
-		tr.find('input,select').each(function(){
-			var name = $(this).attr('name');
-			$(this).attr('name','locations[' + rows + '][' + name + ']');
-		})
-		$('#locations').append(tr);
-		tr.show();
+		addLocation();
 	})
 	$('.editLocation').on('click',function(evt){
 		evt.preventDefault();
@@ -268,7 +256,53 @@ $(function(){
 		reader.readAsDataURL(file);
 		reader.onload = displayPreview;
 	})
+	$('#csv').change(function(evt){
+		var file = this.files[0];
+		var reader = new FileReader();
+		reader.readAsText(file);
+		reader.onload = loadCsv
+	})
 })
+
+function addLocation()
+{
+	var tr = $('#locations').find('tr.default').clone();
+	tr.addClass('locationRow').removeClass('default');
+	tr.find('.removeLocation').click(function(){
+		tr.remove();
+	})
+	tr.find('input,select').each(function(){
+		$(this).removeAttr('disabled');
+	})
+	var rows = $('#locations').find('tr.locationRow').length;
+	tr.find('input,select').each(function(){
+		var name = $(this).attr('name');
+		$(this).attr('name','locations[' + rows + '][' + name + ']');
+		$(this).attr('id','locations.'+rows+'.'+name);
+	})
+	$('#locations').append(tr);
+	tr.show();
+	return rows;
+}
+
+function loadCsv(event)
+{
+	var fields = ['street','city','state','zip','phone'];
+	var result = event.target.result;
+	result = result.split(/\n/);
+	for(var idx in result)
+	{
+		row = addLocation();
+		input = result[idx].split(',');
+		for(var i in input)
+		{
+			var el = $('#locations\\.'+row+'\\.'+fields[i]);
+			console.log(el);
+			el.val(input[i].trim());
+		}
+	}
+	
+}
 
 function displayPreview(event){
 	var result = event.target.result;

@@ -139,15 +139,16 @@ if($_POST)
 			if($location['lid'])
 			{
 				//location exists, just update
-				$stmt = $DB->prepare("UPDATE locations SET lat=:lat, lng=:lng, name=:name, primaryLoco=:primaryLoco, street=:street, city=:city, state=:state, zip=:zip, phone=:phone WHERE lid=:lid");
+				$stmt = $DB->prepare("UPDATE locations SET pid=:pid, lat=:lat, lng=:lng, name=:name, primaryLoco=:primaryLoco, street=:street, city=:city, state=:state, zip=:zip, phone=:phone WHERE lid=:lid");
 				$stmt->bindValue(':lid',$location['lid'],PDO::PARAM_INT);
 			}
 			else
 			{
 				//location doesn't exist insert
-				$stmt = $DB->prepare("INSERT INTO locations (lat,lng,name,primaryLoco,street,city,state,zip,phone) VALUES(:lat, :lng, :name, :primaryLoco, :street, :city, :state, :zip, :phone);");
+				$stmt = $DB->prepare("INSERT INTO locations (pid,lat,lng,name,primaryLoco,street,city,state,zip,phone) VALUES(:pid, :lat, :lng, :name, :primaryLoco, :street, :city, :state, :zip, :phone);");
 			}
 
+			$stmt->bindValue(':pid',$_POST['bussin_id'],PDO::PARAM_INT);
 			$stmt->bindValue(':lat',$position['lat'],PDO::PARAM_STR);
 			$stmt->bindValue(':lng',$position['lng'],PDO::PARAM_STR);
 			$stmt->bindValue(':name',$_POST['bussin_name'],PDO::PARAM_STR);
@@ -162,15 +163,31 @@ if($_POST)
 
 			$locationIds[] = ($location['lid'])? $location['lid'] : $DB->lastInsertId();
 		}
-		//delete all locations not in the locationids
-		// $stmt = $DB->prepare("DELETE FROM locations WHERE lid NOT IN (:string)");
-		// $stmt->bindValue(':string',implode(",", $locationIds),PDO::PARAM_STR);	
-		// $stmt->execute();
-		} 
-		catch( Exception $e )
-		{ 
-		    echo "Error!: " . $e->getMessage() . "</br>"; 
-		} 
+
+		echo implode(",", $locationIds);
+		// //delete all locations not in the locationids
+		$stmt = $DB->prepare("DELETE FROM locations WHERE lid NOT IN (".implode(",", $locationIds).") AND pid = :pid");
+		$stmt->bindValue(':pid',$_POST['bussin_id'],PDO::PARAM_INT);
+		$stmt->execute();
+
+		//remove references from tie_table
+		$stmt = $DB->prepare("DELETE FROM location_tie WHERE cid = :cid");
+		$stmt->bindValue(':cid',$_POST['cid'],PDO::PARAM_INT);
+		$stmt->execute();
+
+		//add new references to the tie table
+		$stmt = $DB->prepare("INSERT INTO location_tie (lid,cid) VALUES(:lid,:cid)");
+		foreach($locationIds as $lid)
+		{
+			$stmt->bindValue(':lid',$lid,PDO::PARAM_INT);	
+			$stmt->bindValue(':cid',$_POST['cid'],PDO::PARAM_INT);	
+			$stmt->execute();
+		}
+	} 
+	catch( Exception $e )
+	{ 
+	    echo "Error!: " . $e->getMessage() . "</br>"; 
+	} 
 	
 	echo $jr->generateResponse();
 
