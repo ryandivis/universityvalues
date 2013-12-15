@@ -511,6 +511,46 @@ echo $description = $row['page_name'];
 	</div>
 </div>
 <script type="text/javascript">
+
+	$(function(){
+
+		$('#requestInformation').submit(function(evt){
+
+			var $this = $(this);
+
+			$this.find('#submitbutton').hide();
+
+			evt.preventDefault();
+
+			if(validateForm(this))
+			{
+				//submit the form via ajax
+				$.ajax({
+					url: $(this).attr('action'),
+					type: 'POST',
+					data: $(this).serialize(),
+					success: function(data)
+					{
+						if(data == 'success')
+						{
+							$this.parent().append('<b>Thank you for your request. One of our knowledgeable experts will be in touch with you shortly.</b>');
+							$this.remove();
+						}
+						else if(data == 'captcha')
+						{
+							alert('The recaptcha you entered was incorrect. Please try again.');
+							$this.find('#submitbutton').show();
+						}
+					}
+				})
+			}
+
+			$this.find('#submitbutton').show();
+
+		});
+
+	});
+
 	function validateForm(theform) {
 		var why = "";
 		var name1 = theform.name.value;
@@ -543,6 +583,10 @@ echo $description = $row['page_name'];
 		if(why != "") {
 			alert(why);
 			return false;
+		}
+		else
+		{
+			return true;
 		}
 	}
 
@@ -600,20 +644,28 @@ echo $description = $row['page_name'];
 				</tr>
 			</table>
 			
-			<div style="padding:10px;"></div>
+			<!-- <div style="padding:10px;"></div> -->
 			<table width=895 cellpadding=0 cellspacing=0 style="text-align:left;">
 				<tr>
-					<td width=111></td><td valign=top width=275>
-					<div style="font-size: 16pt;font-weight: bold; font-family: 'danielbold',Sans-Serif; padding-bottom:9px;">Request Information</div>
-					<form onSubmit="return validateForm(this);" method=post action="<?=$url ?>requestInfo.php">
-						<input type=text name="name" title="Name" style="width:268px;" class="defaultText" />
-						<input type=text name="business" title="Business" style="width:268px;" class="defaultText" />
-						<input type=text name="email" title="Email" style="width:268px;" class="defaultText" />
-						<input type=text name="phone" title="Phone" style="width:268px;" class="defaultText" />
-						<input type="text" aria-required="true" size="30" value="" name="username" class="username" />
-						<textarea style="height:105px !important; padding-top: 5px!important;" id="textareaa" title="Message"  class="defaultText" name="message">Message</textarea>
-						<INPUT TYPE="image" src="<?=$url ?>/images/submit.png" style="width:90px; hegiht:32px; float:right; margin-top:5px; margin-right: 10px;" BORDER="0" ALT="SUBMIT" id="submitbutton">
-					</form></td><td width=111></td><td valign=top width=275><div style="font-size: 16pt;font-weight: bold; font-family: 'danielbold',Sans-Serif; padding-bottom:9px;">Advertiser Coupon Lounge&trade;</div>
+					<td width=111></td>
+					<td valign=top width=275>
+						<div style="font-size: 16pt;font-weight: bold; font-family: 'danielbold',Sans-Serif;">Request Information</div>
+						<form id="requestInformation" method=post action="/ajax/request_info.php">
+							<input type=text name="name" title="Name" style="width:268px;" class="defaultText" />
+							<input type=text name="business" title="Business" style="width:268px;" class="defaultText" />
+							<input type=text name="email" title="Email" style="width:268px;" class="defaultText" />
+							<input type=text name="phone" title="Phone" style="width:268px;" class="defaultText" />
+							<input type="text" aria-required="true" size="30" value="" name="username" class="username" />
+							<textarea style="height:40px !important; padding-top: 5px!important;margin-bottom:9px;" id="textareaa" title="Message"  class="defaultText" name="message">Message</textarea>
+							<?php
+							include_once('/includes/recaptchalib.php');
+							$publickey = "6Le9uOsSAAAAANck66b4jUjpLLCTNc00n9c4f-iT"; // you got this from the signup page
+							echo recaptcha_get_html($publickey);
+							?>
+							<INPUT TYPE="image" src="<?=$url ?>/images/submit.png" style="width:90px; hegiht:32px; float:right; margin-top:5px; margin-right: 10px;" BORDER="0" ALT="SUBMIT" id="submitbutton">
+						</form>
+					</td>
+						<td width=111></td><td valign=top width=275><div style="font-size: 16pt;font-weight: bold; font-family: 'danielbold',Sans-Serif; padding-bottom:9px;">Advertiser Coupon Lounge&trade;</div>
 					<form onSubmit="return client_login(this);"  method=post action="<?=$url ?>login.php">
 						<input type="text" name="email" title="Email"  class="defaultText" style="width:268px;" />
 						<div id="passwordSpan">

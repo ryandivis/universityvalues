@@ -348,3 +348,4 @@ select {	color: gray;}
 #lightboxB {
 	display: none;	background: #000000;	opacity: 0.0;	filter: alpha(opacity=50);	position: absolute;	top: 0px;	left: 0px;	min-width: 100%;	min-height: 100%;	height: 1285px;	z-index: 999;}
 .username { display:none; visibility: hidden; }
+#recaptcha_widget_div{margin-left:-20px;}
